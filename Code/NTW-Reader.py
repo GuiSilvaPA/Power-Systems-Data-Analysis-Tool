@@ -80,6 +80,7 @@ class NetworkData():
         except:
             self.gen_data = pd.DataFrame(data)
             print('LOAD: Check the data or the columns')
+            print('Again')
 
 
 if __name__ == '__main__':
