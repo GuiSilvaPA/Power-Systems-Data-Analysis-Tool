@@ -44,6 +44,7 @@ class NetworkData():
         except:
             self.bus_data = pd.DataFrame(data)
             print('BUS: Check the data or the columns')
+            print(columns)
 
     # Get the LOAD's DATA =====================================================================================================================================
 
@@ -79,8 +80,14 @@ class NetworkData():
 
         except:
             self.gen_data = pd.DataFrame(data)
-            print('LOAD: Check the data or the columns')
-            print('Again')
+            print('GEN: Check the data or the columns')
+
+    # Get the GENERATION's DATA ===============================================================================================================================
+
+    def concat(self):
+
+        self.data = self.bus_data.merge(self.load_data, on='BUS_ID', how='left')
+        self.data = self.data.merge(self.gen_data, on='BUS_ID', how='left')
 
 
 if __name__ == '__main__':
@@ -92,4 +99,7 @@ if __name__ == '__main__':
     ND.bus_data.to_excel("bus_data.xlsx") 
     ND.load_data.to_excel("load_data.xlsx")
     ND.gen_data.to_excel("gen_data.xlsx")
+
+    ND.concat()
+    ND.data.to_excel("data.xlsx")
 
