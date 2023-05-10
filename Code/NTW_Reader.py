@@ -1,6 +1,6 @@
 import pandas as pd
 
-class NetworkData():
+class NTW_Reader():
     
     def __init__(self, path, other=False):
         
@@ -94,7 +94,7 @@ if __name__ == '__main__':
 
     path = 'DataForTest/SIN.ntw'
 
-    ND = NetworkData(path)
+    ND = NTW_Reader(path)
 
     ND.bus_data.to_excel("bus_data.xlsx") 
     ND.load_data.to_excel("load_data.xlsx")

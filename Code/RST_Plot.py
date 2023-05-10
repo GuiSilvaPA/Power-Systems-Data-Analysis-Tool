@@ -572,11 +572,9 @@ class RST_Plot_estavel(RST_Plot):
 
     def plot_est_duplo_hist_PGTM_NDRC_NDRC(self):
 
-<<<<<<< HEAD
+
         a = self.data_n[(self.data_n['SIGLA'] == 'NDRC') & (self.data_n['C'] > 10)]['key'] # & (self.data_n['Contigence_Number'] == '5')
-=======
         est_raw = self.data_e[~(self.data_e['Contigence_Number'] == '6')]#.iloc[:5000]
->>>>>>> 5f33565818bb1aba499409c5e911f56e9ddbcb94
 
         filt_x = est_raw['CODE'] == 'NDRC'
         filt_y = est_raw['CODE'] == 'NDRC'
