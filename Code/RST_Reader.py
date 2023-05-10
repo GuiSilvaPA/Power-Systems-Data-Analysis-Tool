@@ -110,7 +110,7 @@ class RST_Process():
 
 if __name__ == '__main__':
 
-    path = 'C:/Users/albing-local/Desktop/Power Systems Data Analysis Tool/RST_V2A2F2_rev2_FluxoHppa_dynHPPA_PRM01'
+    path = 'RST_V2A2F2_rev2_FluxoHppa_dynHPPA_PRM01'
     RR = RST_Reader(path)
     print(RR.reports)
     RR.generate_json(save_path="REV2-Nao_Oficial.json")
