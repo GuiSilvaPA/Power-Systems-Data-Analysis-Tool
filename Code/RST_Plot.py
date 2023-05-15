@@ -176,6 +176,8 @@ class RST_Plot_instavel(RST_Plot):
         plt.xlabel('Hora')
         plt.ylabel('Dia')
 
+        print('test')
+
         plt.legend(loc='best', bbox_to_anchor=(1, 1.1))
         plt.savefig('images/plot_inst_days_hours.png', bbox_inches="tight")
 
@@ -727,7 +729,7 @@ class RST_Plot_estavel(RST_Plot):
 
 if __name__ == '__main__':
 
-    RP = RST_Plot_estavel(repots_path='REV2-Nao_Oficial.json',
+    RP = RST_Plot_instavel(repots_path='REV2-Nao_Oficial.json',
                            contigences_path='Cont-REV2-Nao_Oficial.json',
                            eol='pu_EOL_da_demanda_bruta_SIN (1).csv',
                            sol='pu_SOL_da_demanda_bruta_SIN (1).csv')
@@ -741,12 +743,12 @@ if __name__ == '__main__':
     # RP.plot_inst_histogram_operation_points()
     # RP.plot_inst_histogram_day()
     # RP.plot_inst_histogram_hour()
-    # RP.plot_inst_histogram_bus()
+    RP.plot_inst_histogram_bus()
     # RP.plot_inst_histogram_CODE()
     # RP.plot_code_histogram_CODE()
 
 
-    RP.plot_est_violin_rocof()
-    # RP.plot_est_violin_nadir()
-    RP.plot_est_duplo_hist_RCFC_NDRC()
+    # RP.plot_est_violin_rocof()
+    # # RP.plot_est_violin_nadir()
+    # RP.plot_est_duplo_hist_RCFC_NDRC()
     # RP.plot_est_duplo_hist_NDRC_NDRC()
