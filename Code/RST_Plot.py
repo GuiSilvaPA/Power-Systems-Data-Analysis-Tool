@@ -176,7 +176,7 @@ class RST_Plot_instavel(RST_Plot):
         plt.xlabel('Hora')
         plt.ylabel('Dia')
 
-        print('test')
+        print('teste')
 
         plt.legend(loc='best', bbox_to_anchor=(1, 1.1))
         plt.savefig('images/plot_inst_days_hours.png', bbox_inches="tight")
@@ -574,12 +574,23 @@ class RST_Plot_estavel(RST_Plot):
 
     def plot_est_duplo_hist_PGTM_NDRC_NDRC(self):
 
+<<<<<<< HEAD
         est_raw = self.data_e[~(self.data_e['Contigence_Number'] == '6')]#.iloc[:5000]
 
         filt_x = est_raw['CODE'] == 'NDRC'
         filt_y = est_raw['CODE'] == 'NDRC'
         filt_z = (est_raw['CODE'] == 'RCFC') & (est_raw['A'] < 2.5)
 
+=======
+
+        a = self.data_n[(self.data_n['SIGLA'] == 'NDRC') & (self.data_n['C'] > 10)]['key'] # & (self.data_n['Contigence_Number'] == '5')
+        est_raw = self.data_e[~(self.data_e['Contigence_Number'] == '6')]#.iloc[:5000]
+
+        filt_x = est_raw['CODE'] == 'NDRC'
+        filt_y = est_raw['CODE'] == 'NDRC'
+        filt_z = (est_raw['CODE'] == 'RCFC') & (est_raw['A'] < 2.5)
+
+>>>>>>> 6a6d463fea184eae0f17d5c80953406abe0d7e6e
         x, y = self._fix(est_raw[filt_x], est_raw[filt_y], _x='B')
         x, z = self._fix(est_raw[filt_x], est_raw[filt_z], _x='B')
         z, y = self._fix(est_raw[filt_z], est_raw[filt_y])
@@ -743,12 +754,22 @@ if __name__ == '__main__':
     # RP.plot_inst_histogram_operation_points()
     # RP.plot_inst_histogram_day()
     # RP.plot_inst_histogram_hour()
+<<<<<<< HEAD
     RP.plot_inst_histogram_bus()
+=======
+    # RP.plot_inst_histogram_bus()
+>>>>>>> 6a6d463fea184eae0f17d5c80953406abe0d7e6e
     # RP.plot_inst_histogram_CODE()
     # RP.plot_code_histogram_CODE()
 
 
+<<<<<<< HEAD
     # RP.plot_est_violin_rocof()
     # # RP.plot_est_violin_nadir()
     # RP.plot_est_duplo_hist_RCFC_NDRC()
+=======
+    RP.plot_est_violin_rocof()
+    # RP.plot_est_violin_nadir()
+    RP.plot_est_duplo_hist_RCFC_NDRC()
+>>>>>>> 6a6d463fea184eae0f17d5c80953406abe0d7e6e
     # RP.plot_est_duplo_hist_NDRC_NDRC()
