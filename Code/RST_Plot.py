@@ -1036,12 +1036,6 @@ class RST_Plot_renovaveis(RST_Plot):
 
 if __name__ == '__main__':
 
-<<<<<<< HEAD
-    ### INSTAVEL
-=======
-    '''INSTAVEL'''
->>>>>>> 9682b463d3f546372815f411fd42d230ebc1d528
-
     # RP = RST_Plot_instavel(repots_path='REV2.json',
     #                        contigences_path='contigences2.json',
     #                        eol='pu_EOL_da_demanda_bruta_SIN (1).csv',
@@ -1058,21 +1052,12 @@ if __name__ == '__main__':
     # RP.plot_inst_histogram_CODE()
     # RP.plot_code_histogram_CODE()
 
-<<<<<<< HEAD
     ### ESTAVEL
-
-    RP = RST_Plot_estavel(repots_path='REV2.json',
-                           contigences_path='contigences2.json',
-                           eol='pu_EOL_da_demanda_bruta_SIN (1).csv',
-                           sol='pu_SOL_da_demanda_bruta_SIN (1).csv')
-=======
-    '''ESTAVEL'''
 
     # RP = RST_Plot_estavel(repots_path       = 'REV2.json',
     #                        contigences_path = 'contigences2.json',
     #                        eol              = 'pu_EOL_da_demanda_bruta_SIN (1).csv',
     #                        sol              = 'pu_SOL_da_demanda_bruta_SIN (1).csv')
->>>>>>> 9682b463d3f546372815f411fd42d230ebc1d528
 
     # RP.plot_est_violin_rocof()
     # RP.plot_est_violin_nadir()
@@ -1080,9 +1065,6 @@ if __name__ == '__main__':
     # RP.plot_est_duplo_hist_RCFC_NDRC()
     # RP.plot_est_duplo_hist_NDRC_NDRC()
     # RP.plot_est_duplo_hist_DAMP_NDRC()
-<<<<<<< HEAD
-    RP.plot_inst_histogram_bus_DAMP()
-=======
     # RP.plot_inst_histogram_bus_DAMP()
 
     '''RENOVAVEIS'''
@@ -1096,4 +1078,3 @@ if __name__ == '__main__':
     RP.histograma_Pene_NDRC_NDRC()
     # RP.histograma_Pene_NDRC_RCFC()
     # RP.histograma_RCFC_NDRC_Pene()
->>>>>>> 9682b463d3f546372815f411fd42d230ebc1d528
