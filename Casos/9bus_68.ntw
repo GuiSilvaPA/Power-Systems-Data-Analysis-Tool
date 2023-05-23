@@ -1,0 +1,79 @@
+           6           3
+ 20220215 11:00:49  100.0
+Caso do Anderson - Página 38 20171219 14:34:47                                                                          
+(BUS_ID), '  BUS_NAME  ', (VBASEKV), TP, S, (GSHT_MW), (BSHMVAR), ARE, ZON, (MODV_PU), (ANGV_DEG), (VMXN_PU), (VMNN_PU), (VMXE_PU), (VMNE_PU), OWN SUB ARG
+     1   ,'Bus 1       ',  16.5000,  3, 0,     0.000,     0.000,   1,    1,  0.980000,     0.0000,   1.10000,   0.90000,   1.10000,   0.90000,    1,     1,  0 /
+     2   ,'Bus 2       ',  18.0000,  2, 0,     0.000,     0.000,   2,    1,  0.980000,    -2.3207,   1.10000,   0.90000,   1.10000,   0.90000,    1,     2,  0 /
+     3   ,'Bus 3       ',  13.8000,  2, 0,     0.000,     0.000,   3,    1,  0.980000,    -1.8527,   1.10000,   0.90000,   1.10000,   0.90000,    1,     3,  0 /
+     4   ,'Bus 4       ', 230.0000,  0, 0,     0.000,     0.000,   1,    1,  0.968820,    -4.9813,   1.10000,   0.90000,   1.10000,   0.90000,    1,     1,  0 /
+     5   ,'Bus 5       ', 230.0000,  0, 0,     0.000,     0.000,   1,    1,  0.941210,    -9.4399,   1.10000,   0.90000,   1.10000,   0.90000,    1,     4,  0 /
+     6   ,'Bus 6       ', 230.0000,  0, 0,     0.000,     0.000,   3,    1,  0.956810,    -8.1763,   1.10000,   0.90000,   1.10000,   0.90000,    1,     5,  0 /
+     7   ,'Bus 7       ', 230.0000,  0, 0,     0.000,     0.000,   2,    1,  0.976220,    -5.6914,   1.10000,   0.90000,   1.10000,   0.90000,    1,     2,  0 /
+     8   ,'Bus 8       ', 230.0000,  0, 0,     0.000,     0.000,   2,    1,  0.964830,    -7.8195,   1.10000,   0.90000,   1.10000,   0.90000,    1,     6,  0 /
+     9   ,'Bus 9       ', 230.0000,  0, 0,     0.000,     0.000,   3,    1,  0.982660,    -4.8176,   1.10000,   0.90000,   1.10000,   0.90000,    1,     3,  0 /
+ 0  / END OF BUS DATA, BEGIN LOAD DATA
+(BUS_ID) ,'ID',ST,    (PL_MW),   (QL_MVAR),    (IPL_MW),  (IQL_MVAR),    (ZPL_MW),  (ZQL_MVAR), (OWN), (R0), (X0), (Name) 
+   5.0,   1.0,   1.0,118.85217391304349,47.5408695652174,   0.0,   0.0,   0.0,   0.0,   1.0,   0.0,   0.0,  None/ 
+   6.0,   1.0,   1.0,85.57356521739132,28.52452173913045,   0.0,   0.0,   0.0,   0.0,   1.0,   0.0,   0.0,  None/ 
+   8.0,   1.0,   1.0,123.60626086956523,33.27860869565215,   0.0,   0.0,   0.0,   0.0,   1.0,   0.0,   0.0,  None/ 
+0  / END OF LOAD DATA, BEGIN GENERATOR DATA
+(BUS_ID) ,'ID',   (PG_MW),  (QG_MVAR), (QMX_MVAR), (QMN_MVAR), (VSPECPU),  (BCO_ID), (BASE_MVA), (RTRF_PU), (XTRF_PU),  (TAP_PU),ST,   (FP%),   (PMAX_MW),  (PMIN_MW),(GRP), (BLOCKED), OWNER, CONECTION, R1, X1, R2, X2, R0, X0, RGRD, XGRD, XQ, SF, MAXANG, TYPE, NAME, NMAX, NON
+   1.0,   1.0,136.06196869565218,     25.255,      130.4,     -130.4,  0.98,   1.0,      247.5,   0.0,     0.0576,   1.0,   1.0,      100.0,      210.4,   0.0,  10.0,   0.0,   1.0,   1.0,   0.0,   0.1,   0.0,   0.1,   0.0,   0.0,   0.0,   0.0,   1.0,   1.0,  80.0,   1.0,    Unnamed,   0.0,  0.0/ 
+   2.0,   1.0,85.57356521739132,      8.571,      101.2,     -101.2,  0.98,   2.0,      192.0,   0.0,     0.0625,   1.0,   1.0,      100.0,      163.2,   0.0,  10.0,   0.0,   1.0,   1.0,   0.0,   0.1,   0.0,   0.1,   0.0,   0.0,   0.0,   0.0,   1.0,   1.0,  80.0,   2.0,    Unnamed,   0.0,  0.0/ 
+   3.0,   1.0,80.81947826086957,     -2.248,  67.4,      -67.4,  0.98,   3.0,      128.0,   0.0,     0.0586,   1.0,   1.0,      100.0,      108.8,   0.0,  10.0,   0.0,   1.0,   1.0,   0.0,   0.1,   0.0,   0.1,   0.0,   0.0,   0.0,   0.0,   1.0,   1.0,  80.0,   2.0,    Unnamed,   0.0,  0.0/ 
+0  / END OF GENERATOR DATA, BEGIN SHUNT DATA
+! BUS_ID, TC, VMAX_PU, VMIN_PU, BCO_ID, B0_MVAR, ST, ST1, N1, B1_Mvar, XZ1_PU, ST2, N2, B2_Mvar, XZ2_PU, ...
+0 / END OF SWITCHED SHUNT DATA, BEGIN TRANSMISSION LINE DATA
+(BFR_ID) , (BTO_ID),'CI', ( RL_PU ),  ( XL_PU ), ( B_MVAR),(L1_MVA),(L2_MVA),(L3_MVA), F, (GSHF_PU), (BSHF_PU), T, (GSHT_PU), (BSHT_PU), F, T, (LEN_KM), ARE, OWN, NAME
+     4   ,     5   ,'1 ',   0.010000,    0.085000,    17.600,      300.00,      300.00,      300.00, 1, 1,     0.00,   1,   0,  0.1000E-01,  0.8500E-01,  0.0000    ,'0                       ',     0   ,0,     0   ,0, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000 /
+     4   ,     6   ,'1 ',   0.017000,    0.092000,    15.800,      300.00,      300.00,      300.00, 1, 1,     0.00,   3,   0,  0.1700E-01,  0.9200E-01,  0.0000    ,'0                       ',     0   ,0,     0   ,0, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000 /
+     6   ,     9   ,'1 ',   0.039000,    0.170000,    35.800,      200.00,      200.00,      200.00, 1, 1,     0.00,   3,   0,  0.3900E-01,  0.1700    ,  0.0000    ,'0                       ',     0   ,0,     0   ,0, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000 /
+     8   ,     9   ,'1 ',   0.011900,    0.100800,    20.900,      300.00,      300.00,      300.00, 1, 1,     0.00,   3,   0,  0.1190E-01,  0.1008    ,  0.0000    ,'0                       ',     0   ,0,     0   ,0, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000 /
+     7   ,     8   ,'1 ',   0.008500,    0.072000,    14.900,      300.00,      300.00,      300.00, 1, 1,     0.00,   2,   0,  0.8500E-02,  0.7200E-01,  0.0000    ,'0                       ',     0   ,0,     0   ,0, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000 /
+     7   ,     5   ,'1 ',   0.032000,    0.161000,    30.600,      200.00,      200.00,      200.00, 1, 1,     0.00,   1,   0,  0.3200E-01,  0.1610    ,  0.0000    ,'0                       ',     0   ,0,     0   ,0, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000, 0,   0.00000,   0.00000 /
+0  / END OF TRANSMISSION LINE DATA, BEGIN TRANSFORMER DATA
+     2   ,      7   ,      0   ,'1 ',      0.000,      0.000, 1, 1, 0,  0.000000,    0.00000,     2,     0, '0                      ' /
+1,  0.00000E+00,  0.62500E-01,    1.00000,    0.00000,     192.00,     192.00,     192.00,  0,      0   , 0,      1.0000,      1.0000,  0.00000E+00,  0.00000E+00,  33,   0, 11,  0.00000E+00, -0.16000E+02,  0.00000E+00,  0.00000E+00,  0.00000E+00,  0.00000E+00
+     3   ,      9   ,      0   ,'1 ',      0.000,      0.000, 1, 1, 0,  0.000000,    0.00000,     3,     0, '0                      ' /
+1,  0.00000E+00,  0.58600E-01,    1.00000,    0.00000,     128.00,     128.00,     128.00,  0,      0   , 0,      1.0000,      1.0000,  0.00000E+00,  0.00000E+00,  33,   0, 11,  0.00000E+00, -0.17065E+02,  0.00000E+00,  0.00000E+00,  0.00000E+00,  0.00000E+00
+     1   ,      4   ,      0   ,'1 ',      0.000,      0.000, 1, 1, 0,  0.000000,    0.00000,     1,     0, '0                      ' /
+1,  0.00000E+00,  0.57600E-01,    1.00000,    0.00000,     247.00,     247.00,     247.00,  0,      0   , 0,      1.0000,      1.0000,  0.00000E+00,  0.00000E+00,  33,   0, 11,  0.00000E+00, -0.17361E+02,  0.00000E+00,  0.00000E+00,  0.00000E+00,  0.00000E+00
+0  / END OF TRANSFORMER DATA, BEGIN SERIES CAPACITOR DATA
+! BFROM_ID, BTO_ID, 'CRC', R_PU, X_PU, RATEA_MVA, RATEB_MVA, RATEC_MVA, SHTF_ST, GSHTF, BSHTF, SHTT_ST, GSHTT, BSHTT, BRKERF_ST, BRKERT_ST, OWNER, NAME
+0  / END OF SERIES CAPACITOR DATA, BEGIN DCLINK DATA
+! BIP, ARE, ZON, TC, RL_OHM, VALCONT, VSPEC_KV, VCCMIN_KV, DELTI_A, STATUS, VNOM_KV, PNOM_MW, NAME
+! RET_ID, NC, ALFMX, ALFMN, RTRFC_PU, XTRFC_PU, BASE_KV, TRR, TAPC_PU, TMXC_PU, TMNC_PU, TSTC_PU, XCCC_OHM
+! INV_ID, NC, ALFMX, ALFMN, ITRFC_PU, XTRFC_PU, BASE_KV, TRI, TAPC_PU, TMXC_PU, TMNC_PU, TSTC_PU, XCCC_OHM
+0  / END OF DCLINK DATA, BEGIN VSC DATA
+(NUM), (NAME), (STATUS)
+(CONV_NUM), (BUS), (STATUS), (PTYPE), (PSET), (QTYPE), (QSET), (A), (B), (C), (SMAX), (IMAX), (QMAX), (QMIN), (GC), (BC), (BF), (GT), (BT), (VBASE), (LPWF), (GND), (NS), (TYPE)
+(FROM_NODE), (TO_NODE), (STATUS), (RDC)
+0  / END OF VSC DATA, BEGIN AREA DATA
+(#AR), (ASW_ID),  (INT_MW),'(          AREA_NAME         )'
+    1,     0   ,     0.000,'0.000                         ' /
+    2,     0   ,     0.000,'0.000                         ' /
+    3,     0   ,     0.000,'0.000                         ' /
+0  / END OF AREA DATA, BEGIN OF ZONE DATA
+! ZONE ID, ZONE NAME
+    1,'No Name     ' /
+0 / END OF ZONE DATA, BEGIN OWNER DATA
+! OWNER ID, OWNER NAME
+0 / END OF OWNER DATA, BEGIN OF SUBSTATION DATA
+! SUBSTATION ID, SUB NAME, LATITUDE, LONGITUDE
+    1, 'SUB 1       ',   0.00,   0.00 /
+    2, 'SUB 2       ',   0.00,   0.00 /
+    3, 'SUB 3       ',   0.00,   0.00 /
+    4, 'SUB 4       ',   0.00,   0.00 /
+    5, 'SUB 5       ',   0.00,   0.00 /
+    6, 'SUB 6       ',   0.00,   0.00 /
+ 0  / END OF SUBSTATION DATA, BEGIN OF TRANSFORMER IMPEDANCE CORRECTION DATA
+! TABLE ID, TAP1, CORR1, TAP2, CORR2, TAP3, CORR3, ...
+ 0 / END OF IMPEDANCE CORRECTION DATA, BEGIN OF LINE MUTUAL IMPEDANCE DATA
+! BFR1, BTO1, CRC1, INI1(%), FIN1(%), BFR2, BTO2, CRC2, INI2(%), FIN2(%), R_PU, X_PU
+ 0 / END OF LINE MUTUAL IMPEDANCE DATA, BEGIN OF INDUCTION MOTOR DATA
+! BUS,  ID,  STATUS, COUNT  MVA,  PE,  QE,  RS, XS, XM, R1, X1, R0, X0, OWNER, TYPE NAME
+0  / END OF INDUCTION MOTOR DATA, BEGIN OF BREAKER CONFIGURATION DATA
+! BUS No.,  Node 1, Node 2, ...
+0  / END OF BREAKER CONFIGURATION DATA, BEGIN OF FACTS DATA
+! NAME,  SEND-BUS, TERMINAL-BUS, TYPE, PREF(MW), QREF(MVAR), VSET(PU), ISHTMAX(MVA), PTRXMAX(MW), VTMIN(PU), VTMAX(PU), VCMAX(PU), ICMAX(MVA), XC(PU), STATUS, OWNER
+0  / END OF FACTS DATA
