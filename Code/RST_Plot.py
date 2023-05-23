@@ -8,8 +8,6 @@ class RST_Plot():
     def __init__(self, repots_path, contigences_path, eol=None, sol=None):
 
         self.data = RST_Process(repots_path, contigences_path).data
-
-        print(len(self.data['Operational Point'].unique()))
         
         self.data['Day']     = [OP.split('/')[-2].replace('Dia', "") for OP in self.data['Operational Point'].values]
         self.data['Day_int'] = self.data['Day'].astype('int')
@@ -56,6 +54,8 @@ class RST_Plot():
             # print(self.renovaveis[['Day', 'Hour', '%MW']])
 
             self.data_n = self.data_n.merge(self.renovaveis[['Day', 'Hour', '%MW', '%MW_r']], on=['Day', 'Hour'], how='left')
+
+        print(self.data_n)
 
     # ================================================================================================================================= #
 
@@ -871,11 +871,176 @@ class RST_Plot_estavel(RST_Plot):
         plt.savefig('images/teste.png', bbox_inches="tight")
 
 
+''' 
+*****************************************************************************************************************************************************************
+
+    RST_Plot_renovaveis -> RST_Plot
+
+*****************************************************************************************************************************************************************
+''' 
+
+
+class RST_Plot_renovaveis(RST_Plot):
+
+    # ===================================================================================================================================================== #
+
+    def plot_est_duplo_hist_PGTM_NDRC_NDRC(self):
+
+        est_raw = self.data_n
+
+        filt_x = est_raw['SIGLA'] == 'RCFC'
+        filt_y = est_raw['SIGLA'] == 'NDRC'
+        filt_z = est_raw['SIGLA'] == 'LDSH'
+
+        x, y = self._fix(est_raw[filt_x], est_raw[filt_y], _x='A')
+        x, z = self._fix(est_raw[filt_x], est_raw[filt_z], _x='A')
+        z, y = self._fix(est_raw[filt_z], est_raw[filt_y])
+        # z_, y = self._fix(est_raw[filt_z], est_raw[filt_y], _x='D')
+
+        print(len(x), len(y), len(z))
+
+
+        # Start with a square Figure.
+        fig = plt.figure(figsize=(10, 6))
+        # Add a gridspec with two rows and two columns and a ratio of 1 to 4 between
+        # the size of the marginal axes and the main axes in both directions.
+        # Also adjust the subplot parameters for a square plot.
+        gs = fig.add_gridspec(2, 2,  width_ratios=(4, 1), height_ratios=(1, 4),
+                            left=0.1, right=0.9, bottom=0.1, top=0.9,
+                            wspace=0.05, hspace=0.05)
+        # Create the Axes.
+        ax = fig.add_subplot(gs[1, 0])
+        ax_histx = fig.add_subplot(gs[0, 0], sharex=ax)
+        ax_histy = fig.add_subplot(gs[1, 1], sharey=ax)
+        # Draw the scatter plot and marginals.
+        points = self.scatter_hist3d(x, 60-y, z, ax, ax_histx, ax_histy)
+
+        plt.colorbar(points, location='left') #, orientation='horizontal'
+
+        plt.show()
+
+
+    # ===================================================================================================================================================== #
+
+    def histograma_Pene_NDRC_NDRC(self):
+
+        # for i in [1, 11]:
+        for i in range(1, 52):
+
+            est_raw = self.data_n[self.data_n['Contigence_Number'].isin([str(i)])]
+
+            # est_raw = self.data_n[self.data_n['Contigence_Number'].isin([str(i) for i in range(16, 30)])]
+
+            filt_x = est_raw['SIGLA'] == 'NDRC'
+            filt_y = est_raw['SIGLA'] == 'NDRC'
+            filt_z = est_raw['SIGLA'] == 'NDRC'
+
+            x, y = self._fix(est_raw[filt_x], est_raw[filt_y], _x='C', _y='%MW')
+            x, z = self._fix(est_raw[filt_x], est_raw[filt_z], _x='C', _y='A')
+            z, y = self._fix(est_raw[filt_z], est_raw[filt_y], _x='A', _y='%MW')
+
+            # Start with a square Figure.
+            fig = plt.figure(figsize=(10, 6))
+            gs  = fig.add_gridspec(2, 2,  width_ratios=(4, 1), height_ratios=(1, 4), left=0.1, right=0.9, bottom=0.1, top=0.9, wspace=0.05, hspace=0.05)
+
+            # Create the Axes.
+            ax       = fig.add_subplot(gs[1, 0])
+            ax_histx = fig.add_subplot(gs[0, 0], sharex=ax)
+            ax_histy = fig.add_subplot(gs[1, 1], sharey=ax)
+
+            # Draw the scatter plot and marginals.
+            points = self.scatter_hist3d(x, y, z, ax, ax_histx, ax_histy)
+
+            plt.colorbar(points, location='left')
+
+            plt.title(str(i))
+            ax.set_ylabel('Penetração [%]')
+            ax.set_xlabel('Inércia [s]')
+
+            # plt.show()        
+            plt.savefig('images/teste2/' + str(i) + '.png', bbox_inches="tight")
+
+    # ===================================================================================================================================================== #
+
+    def histograma_Pene_NDRC_RCFC(self):
+
+        for i in [1, 11]:
+
+            est_raw = self.data_n[self.data_n['Contigence_Number'].isin([str(i)])]
+
+            filt_x = est_raw['SIGLA'] == 'NDRC'
+            filt_y = est_raw['SIGLA'] == 'NDRC'
+            filt_z = est_raw['SIGLA'] == 'RCFC'
+
+            x, y = self._fix(est_raw[filt_x], est_raw[filt_y], _x='C', _y='%MW')
+            x, z = self._fix(est_raw[filt_x], est_raw[filt_z], _x='C', _y='A')
+            z, y = self._fix(est_raw[filt_z], est_raw[filt_y], _x='A', _y='%MW')
+
+            # Start with a square Figure.
+            fig = plt.figure(figsize=(10, 6))
+            gs  = fig.add_gridspec(2, 2,  width_ratios=(4, 1), height_ratios=(1, 4), left=0.1, right=0.9, bottom=0.1, top=0.9, wspace=0.05, hspace=0.05)
+
+            # Create the Axes.
+            ax       = fig.add_subplot(gs[1, 0])
+            ax_histx = fig.add_subplot(gs[0, 0], sharex=ax)
+            ax_histy = fig.add_subplot(gs[1, 1], sharey=ax)
+
+            # Draw the scatter plot and marginals.
+            points = self.scatter_hist3d(x, y, z, ax, ax_histx, ax_histy)
+
+            # plt.colorbar(points, location='left')
+
+            plt.title(str(i))
+            ax.set_ylabel('Penetração [%]')
+            ax.set_xlabel('Inércia [s]')
+
+            # plt.show()
+            plt.savefig('images/ROCOF/' + str(i) + '.png', bbox_inches="tight")
+
+    # ===================================================================================================================================================== #
+
+    def histograma_RCFC_NDRC_Pene(self):
+
+        # for i in range(1, 52):
+
+        est_raw = self.data_n#[self.data_n['Contigence_Number'].isin([str(i)])]
+
+        filt_x = est_raw['SIGLA'] == 'RCFC'
+        filt_y = est_raw['SIGLA'] == 'NDRC'
+        filt_z = est_raw['SIGLA'] == 'NDRC'
+
+        x, y = self._fix(est_raw[filt_x], est_raw[filt_y], _x='A',   _y='A')
+        x, z = self._fix(est_raw[filt_x], est_raw[filt_z], _x='A',   _y='%MW')
+        z, y = self._fix(est_raw[filt_z], est_raw[filt_y], _x='%MW', _y='A')
+
+        # Start with a square Figure.
+        fig = plt.figure(figsize=(10, 6))
+        gs  = fig.add_gridspec(2, 2,  width_ratios=(4, 1), height_ratios=(1, 4), left=0.1, right=0.9, bottom=0.1, top=0.9, wspace=0.05, hspace=0.05)
+
+        # Create the Axes.
+        ax       = fig.add_subplot(gs[1, 0])
+        ax_histx = fig.add_subplot(gs[0, 0], sharex=ax)
+        ax_histy = fig.add_subplot(gs[1, 1], sharey=ax)
+
+        # Draw the scatter plot and marginals.
+        points = self.scatter_hist3d(x, 60-y, z, ax, ax_histx, ax_histy)
+
+        # plt.colorbar(points, location='left')
+
+        # plt.title(str(i))
+
+        plt.show()
+        # plt.savefig('images/teste/' + str(i) + '.png', bbox_inches="tight")
+
 
 
 if __name__ == '__main__':
 
+<<<<<<< HEAD
     ### INSTAVEL
+=======
+    '''INSTAVEL'''
+>>>>>>> 9682b463d3f546372815f411fd42d230ebc1d528
 
     # RP = RST_Plot_instavel(repots_path='REV2.json',
     #                        contigences_path='contigences2.json',
@@ -893,12 +1058,21 @@ if __name__ == '__main__':
     # RP.plot_inst_histogram_CODE()
     # RP.plot_code_histogram_CODE()
 
+<<<<<<< HEAD
     ### ESTAVEL
 
     RP = RST_Plot_estavel(repots_path='REV2.json',
                            contigences_path='contigences2.json',
                            eol='pu_EOL_da_demanda_bruta_SIN (1).csv',
                            sol='pu_SOL_da_demanda_bruta_SIN (1).csv')
+=======
+    '''ESTAVEL'''
+
+    # RP = RST_Plot_estavel(repots_path       = 'REV2.json',
+    #                        contigences_path = 'contigences2.json',
+    #                        eol              = 'pu_EOL_da_demanda_bruta_SIN (1).csv',
+    #                        sol              = 'pu_SOL_da_demanda_bruta_SIN (1).csv')
+>>>>>>> 9682b463d3f546372815f411fd42d230ebc1d528
 
     # RP.plot_est_violin_rocof()
     # RP.plot_est_violin_nadir()
@@ -906,4 +1080,20 @@ if __name__ == '__main__':
     # RP.plot_est_duplo_hist_RCFC_NDRC()
     # RP.plot_est_duplo_hist_NDRC_NDRC()
     # RP.plot_est_duplo_hist_DAMP_NDRC()
+<<<<<<< HEAD
     RP.plot_inst_histogram_bus_DAMP()
+=======
+    # RP.plot_inst_histogram_bus_DAMP()
+
+    '''RENOVAVEIS'''
+
+    RP = RST_Plot_renovaveis(repots_path       = 'REV2.json',
+                             contigences_path = 'contigences2.json',
+                             eol              = 'pu_EOL_da_demanda_bruta_SIN (1).csv',
+                             sol              = 'pu_SOL_da_demanda_bruta_SIN (1).csv')
+
+
+    RP.histograma_Pene_NDRC_NDRC()
+    # RP.histograma_Pene_NDRC_RCFC()
+    # RP.histograma_RCFC_NDRC_Pene()
+>>>>>>> 9682b463d3f546372815f411fd42d230ebc1d528

@@ -12,6 +12,8 @@ class DynamicData():
         with open(path) as f:
             self.lines = f.readlines()
 
+        print('Teste')
+
         # lines = [line.strip().replace('/', '').replace('!', '') for line in lines]
         # lines = [line for line in lines if line != '']
         # lines = lines[1:-3]
