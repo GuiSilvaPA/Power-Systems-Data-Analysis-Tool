@@ -45,6 +45,7 @@ class RST_Reader():
             # code_names = set([report[1] for report in reports])
 
             dict_report, actual_contigence, cont = {}, '0', 0
+            print(report_file)
             for report in reports:
 
                 for idx, var in enumerate(report[2:]):
@@ -110,7 +111,7 @@ class RST_Process():
 
 if __name__ == '__main__':
 
-    path = 'RST_V2A2F2_rev2_FluxoHppa_dynHPPA_PRM01'
+    path = 'rev2'
     RR = RST_Reader(path)
     print(RR.reports)
-    RR.generate_json(save_path="REV2-Nao_Oficial.json")
+    RR.generate_json(save_path="REV2.json")
