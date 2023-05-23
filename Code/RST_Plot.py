@@ -1036,8 +1036,11 @@ class RST_Plot_renovaveis(RST_Plot):
 
 if __name__ == '__main__':
 
+<<<<<<< HEAD
+=======
     '''INSTAVEL'''
 
+>>>>>>> a84053ba715c15222ecdbc75461bca21e62f77c1
     # RP = RST_Plot_instavel(repots_path='REV2.json',
     #                        contigences_path='contigences2.json',
     #                        eol='pu_EOL_da_demanda_bruta_SIN (1).csv',
@@ -1054,7 +1057,11 @@ if __name__ == '__main__':
     # RP.plot_inst_histogram_CODE()
     # RP.plot_code_histogram_CODE()
 
+<<<<<<< HEAD
+    ### ESTAVEL
+=======
     '''ESTAVEL'''
+>>>>>>> a84053ba715c15222ecdbc75461bca21e62f77c1
 
     # RP = RST_Plot_estavel(repots_path       = 'REV2.json',
     #                        contigences_path = 'contigences2.json',
@@ -1079,4 +1086,8 @@ if __name__ == '__main__':
 
     RP.histograma_Pene_NDRC_NDRC()
     # RP.histograma_Pene_NDRC_RCFC()
+<<<<<<< HEAD
     # RP.histograma_RCFC_NDRC_Pene()
+=======
+    # RP.histograma_RCFC_NDRC_Pene()
+>>>>>>> a84053ba715c15222ecdbc75461bca21e62f77c1
