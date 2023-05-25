@@ -20,7 +20,7 @@ class RST_Reader():
         self.reports = reports
         self.path    = path
 
-    def generate_json(self, save_path):
+    def generate_json(self, save_path, cont_path, debug=True):
 
         all_reports = {}
         for report_file in tqdm(self.reports):
@@ -44,9 +44,12 @@ class RST_Reader():
 
             # code_names = set([report[1] for report in reports])
 
+            if debug:
+                print(report_file)
+
             dict_report, actual_contigence, cont = {}, '0', 0
             for report in reports:
-
+                
                 for idx, var in enumerate(report[2:]):
                     report[idx+2] = float(var)
 
@@ -66,7 +69,7 @@ class RST_Reader():
         with open(save_path, "w") as write_file:
             json.dump(all_reports, write_file, indent=4)
 
-        with open('contigences2.json', "w") as write_file:
+        with open(cont_path, "w") as write_file:
             json.dump(contigences, write_file, indent=4)
 
 
@@ -103,14 +106,12 @@ class RST_Process():
 
         self.data = df
 
-        # print(df.head(5))
-
 
 
 
 if __name__ == '__main__':
 
-    path = 'RST_V2A2F2_rev2_FluxoHppa_dynHPPA_PRM01'
+    path = 'C:/Users/Scarlet/Desktop/Data/PTOPER_A2V2F2_rev2/RenovaveisONS'
     RR = RST_Reader(path)
-    print(RR.reports)
-    RR.generate_json(save_path="REV2-Nao_Oficial.json")
+    RR.generate_json(save_path= path + "/PTOPER_A2V2F2_rev2.json",
+                     cont_path= path + "/PTOPER_A2V2F2_rev2_cont.json")

@@ -1,0 +1,12 @@
+- Damp VS Delta P
+- Damp VS Penetração
+- Damp (plot_inst_days_hours):
+	- entre 0 e 1
+
+- Load Shed VS Nadir
+- Load Shed VS RoCoF VS H
+- Load Shed VS Nadir VS Pene
+
+- OFRQ, UFRQ
+
+- GRES VS Nadir
