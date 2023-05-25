@@ -925,23 +925,13 @@ class RST_Plot_renovaveis(RST_Plot):
 
 if __name__ == '__main__':
 
-<<<<<<< HEAD
-=======
     '''INSTAVEL'''
 
-<<<<<<< HEAD
     RP = RST_Plot_instavel(repots_path      = 'C:/Users/Scarlet/Desktop/Data/PTOPER_A2V2F2_rev2/RenovaveisONS/PTOPER_A2V2F2_rev2.json',
                            contigences_path = 'C:/Users/Scarlet/Desktop/Data/PTOPER_A2V2F2_rev2/RenovaveisONS/PTOPER_A2V2F2_rev2_cont.json',
                            eol              = 'C:/Users/Scarlet/Desktop/Data/EOL.csv',
                            sol              = 'C:/Users/Scarlet/Desktop/Data/SOL.csv',
                            save_path        = 'C:/Users/Scarlet/Desktop/Data/PTOPER_A2V2F2_rev2/imagens/')
-=======
->>>>>>> a84053ba715c15222ecdbc75461bca21e62f77c1
-    # RP = RST_Plot_instavel(repots_path='REV2.json',
-    #                        contigences_path='contigences2.json',
-    #                        eol='pu_EOL_da_demanda_bruta_SIN (1).csv',
-    #                        sol='pu_SOL_da_demanda_bruta_SIN (1).csv')
->>>>>>> aab883e0396fc0a48255e7c6517d7d7796d74b3e
     
     RP.plot_inst_days_hours()
     RP.plot_inst_contigence_bus()
@@ -954,11 +944,7 @@ if __name__ == '__main__':
     RP.plot_inst_histogram_CODE()
     RP.plot_code_histogram_CODE()
 
-<<<<<<< HEAD
-    ### ESTAVEL
-=======
     '''ESTAVEL'''
->>>>>>> a84053ba715c15222ecdbc75461bca21e62f77c1
 
     RP = RST_Plot_estavel(repots_path      = 'C:/Users/Scarlet/Desktop/Data/PTOPER_A2V2F2_rev2/RenovaveisONS/PTOPER_A2V2F2_rev2.json',
                           contigences_path = 'C:/Users/Scarlet/Desktop/Data/PTOPER_A2V2F2_rev2/RenovaveisONS/PTOPER_A2V2F2_rev2_cont.json',
@@ -986,14 +972,5 @@ if __name__ == '__main__':
 
 
     RP.histograma_Pene_NDRC_NDRC()
-<<<<<<< HEAD
     RP.histograma_Pene_NDRC_RCFC()
     RP.histograma_RCFC_NDRC_Pene()
-=======
-    # RP.histograma_Pene_NDRC_RCFC()
-<<<<<<< HEAD
-    # RP.histograma_RCFC_NDRC_Pene()
-=======
-    # RP.histograma_RCFC_NDRC_Pene()
->>>>>>> a84053ba715c15222ecdbc75461bca21e62f77c1
->>>>>>> aab883e0396fc0a48255e7c6517d7d7796d74b3e
